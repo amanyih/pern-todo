@@ -14,3 +14,5 @@ todoRouter
   .get(todoController.getTodo)
   .patch(todoController.updateTodo)
   .delete(todoController.deleteTodo);
+
+module.exports = todoRouter;

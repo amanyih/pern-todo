@@ -1,7 +1,7 @@
 const Pool = require("pg").Pool;
 
 user = process.env.USER || "postgres";
-password = process.env.PASSWORD;
+password = "postsqlgre";
 host = process.env.HOST || "localhost";
 database = process.env.DATABASE || "perntodo";
 port = process.env.PORT || 5432;
