@@ -1,7 +1,6 @@
 const pool = require("../db");
 
 exports.getAllTodos = async (req, res) => {
-  //get all todos from db
   try {
     const allTodos = await pool.query("SELECT * FROM todo");
     res.json({
@@ -17,7 +16,6 @@ exports.getAllTodos = async (req, res) => {
 };
 
 exports.getTodo = async (req, res) => {
-  //get a todo from db
   try {
     const { id } = req.params;
     const todo = await pool.query("SELECT * FROM todo WHERE todo_id = $1", [
@@ -30,7 +28,6 @@ exports.getTodo = async (req, res) => {
 };
 
 exports.createTodo = async (req, res) => {
-  //create a todo
   try {
     const { description } = req.body;
     const newTodo = await pool.query(
@@ -44,7 +41,6 @@ exports.createTodo = async (req, res) => {
 };
 
 exports.updateTodo = async (req, res) => {
-  //update a todo
   try {
     const { id } = req.params;
     const { description } = req.body;
@@ -64,7 +60,6 @@ exports.updateTodo = async (req, res) => {
 };
 
 exports.deleteTodo = async (req, res) => {
-  //delete a todo
   try {
     const { id } = req.params;
     const deleteTodo = await pool.query("DELETE FROM todo WHERE todo_id = $1", [
