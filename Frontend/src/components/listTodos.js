@@ -54,7 +54,11 @@ const ListTodos = () => {
               <th scope="row">{`${todo.todo_id}`}</th>
               <td>{todo.description}</td>
               <td>
-                <EditModal todoItem={todo}></EditModal>
+                <EditModal
+                  desc={todo.description}
+                  id={todo.todo_id}
+                  todo={todo}
+                ></EditModal>
               </td>
               <td>
                 <button
